@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flora Mil Flores — Flores que falam por você</title>
+  <meta name="description"
+    content="Uma experiência imersiva pelo catálogo da Flora Mil Flores. Buquês, arranjos, plantas e cestas. Monte sua sacola e finalize pelo WhatsApp." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="is-loading">
+
+  <!-- ===================== LOADER ===================== -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__mark">🌻</span>
+      <span class="loader__name">Flora <em>Mil Flores</em></span>
+      <div class="loader__bar"><i id="loaderBar"></i></div>
+    </div>
+  </div>
+
+  <!-- ===================== PROGRESSO DE SCROLL ===================== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" data-scroll>
+        <span class="logo__mark">🌻</span>
+        <span class="logo__text">Flora <em>Mil Flores</em></span>
+      </a>
+      <nav class="nav">
+        <a href="#vitrine" data-scroll>Destaques</a>
+        <a href="#catalogo" data-scroll>Catálogo</a>
+        <a href="#sobre" data-scroll>Sobre</a>
+      </nav>
+      <button class="cart-btn" id="openCart" aria-label="Abrir sacola">
+        🛍️ <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero__bg" id="heroBg"></div>
+    <div class="hero__petals" id="petals"></div>
+    <div class="hero__bloom" id="heroBloom">🌻</div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-hero>Floricultura em Contagem · MG</p>
+      <h1 class="hero__title">
+        <span class="line" data-hero>Flores que</span>
+        <span class="line line--accent" data-hero>falam por você</span>
+      </h1>
+      <p class="hero__text" data-hero>
+        Buquês para todas as ocasiões, flores, folhagens e frutíferas.
+        Explore, escolha e finalize em segundos pelo WhatsApp — entregamos no seu endereço.
+      </p>
+      <a href="#vitrine" class="btn btn--primary" data-hero data-scroll>Começar a explorar</a>
+    </div>
+
+    <div class="hero__scroll" data-hero>
+      <span>Role para descobrir</span>
+      <i></i>
+    </div>
+  </section>
+
+  <!-- ===================== STATEMENT (reveal por palavra) ===================== -->
+  <section class="statement">
+    <p class="statement__text" id="statementText">
+      Cada flor carrega uma intenção. Nós cuidamos de cada pétala
+      para que a sua chegue perfeita — e diga exatamente o que você sente.
+    </p>
+  </section>
+
+  <!-- ===================== VITRINE IMERSIVA (pinned) ===================== -->
+  <section class="showcase" id="vitrine">
+    <div class="showcase__sticky">
+      <div class="showcase__glow" id="showGlow"></div>
+      <div class="showcase__stage" id="showStage"><!-- slides via JS --></div>
+      <div class="showcase__progress" id="showDots"></div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERIA HORIZONTAL (categorias) ===================== -->
+  <section class="hgallery" id="colecoes">
+    <div class="hgallery__head container">
+      <h2 class="section-title">Nossas coleções</h2>
+      <p class="section-sub">Role para o lado →</p>
+    </div>
+    <div class="hgallery__viewport" id="hgViewport">
+      <div class="hgallery__track" id="hgTrack"><!-- cards via JS --></div>
+    </div>
+  </section>
+
+  <!-- ===================== CATÁLOGO ===================== -->
+  <main class="catalog" id="catalogo">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Catálogo completo</h2>
+        <p class="section-sub">Toque numa categoria e monte sua sacola</p>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="productGrid"></div>
+    </div>
+  </main>
+
+  <!-- ===================== SOBRE (parallax) ===================== -->
+  <section class="about" id="sobre">
+    <div class="about__art" id="aboutArt">🌻</div>
+    <div class="container about__inner">
+      <div class="about__text reveal">
+        <h2 class="section-title">Feito à mão, todos os dias</h2>
+        <p>
+          Trabalhamos com flores, folhagens e frutíferas, montando buquês e
+          arranjos para todas as ocasiões. Da surpresa romântica ao presente
+          especial — e também jardinagem para deixar sua casa mais verde.
+        </p>
+        <ul class="about__list">
+          <li>🌿 Flores, folhagens e frutíferas selecionadas</li>
+          <li>🧸 Buquês com ursinho, caixa de joias e cestas</li>
+          <li>🚚 Entrega no seu endereço em Contagem e região</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="cta">
+    <div class="container reveal">
+      <h2 class="cta__title">Pronto para encantar alguém?</h2>
+      <p class="cta__sub">Monte sua sacola e fale com a gente agora.</p>
+      <button class="btn btn--primary btn--lg" id="ctaCart">Abrir minha sacola 🛍️</button>
+    </div>
+  </section>
+
+  <!-- ===================== INSTAGRAM (prévia do perfil) ===================== -->
+  <section class="insta" id="instagram">
+    <div class="container">
+      <div class="insta__head reveal">
+        <h2 class="section-title">No nosso Instagram</h2>
+        <p class="section-sub">Uma prévia dos nossos principais produtos</p>
+      </div>
+
+      <article class="igcard reveal">
+        <header class="igcard__top">
+          <a class="igcard__avatar" id="igAvatar" href="#" target="_blank" rel="noopener">
+            <img src="assets/perfil.png" alt="Flora 1000 Flores" />
+            <span class="igcard__avatar-fb">🌻</span>
+          </a>
+          <div class="igcard__meta">
+            <div class="igcard__row">
+              <a class="igcard__user" id="igUser" href="#" target="_blank" rel="noopener">flora1000flores_contagem</a>
+              <span class="igcard__verified" title="conta comercial">●</span>
+            </div>
+            <ul class="igcard__stats">
+              <li><strong id="igPosts">—</strong> publicações</li>
+              <li><strong id="igFollowers">—</strong> seguidores</li>
+              <li><strong id="igFollowing">—</strong> seguindo</li>
+            </ul>
+            <div class="igcard__bio">
+              <b>Flora 1000 Flores</b>
+              <span class="igcard__cat">Estabelecimento comercial de venda a retalho</span>
+              <span>Flores, folhagens e frutíferas</span>
+              <span>Buquê de flores p/ todas ocasiões 🌺🌻🌹</span>
+              <span>Entregamos em seu endereço, consulte</span>
+              <span class="igcard__addr">📍 <span id="igAddress"></span></span>
+              <a class="igcard__link" id="igWhats" href="#" target="_blank" rel="noopener">🔗 wa.me/31998239417</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="igcard__actions">
+          <a class="igbtn igbtn--follow" id="igFollow" href="#" target="_blank" rel="noopener">Seguindo ▾</a>
+          <a class="igbtn" id="igMessage" href="#" target="_blank" rel="noopener">Enviar mensagem</a>
+          <a class="igbtn igbtn--icon" id="igMore" href="#" target="_blank" rel="noopener" aria-label="Mais">＋</a>
+        </div>
+
+        <!-- Destaques (stories) -->
+        <div class="igcard__highlights" id="igHighlights"></div>
+
+        <!-- Barra de abas -->
+        <div class="igcard__tabs">
+          <span class="igtab is-active" aria-label="Publicações">▦</span>
+          <span class="igtab" aria-label="Reels">▷</span>
+          <span class="igtab" aria-label="Repostagens">⇄</span>
+          <span class="igtab" aria-label="Marcações">⛶</span>
+        </div>
+
+        <!-- Grade de produtos como "posts" (usa as fotos reais; cai no placeholder) -->
+        <div class="igcard__grid" id="instaGrid"></div>
+
+        <!-- =========================================================
+             FEED AO VIVO DO INSTAGRAM (não pesa no site — a mídia fica
+             nos servidores do Instagram, carregada sob demanda).
+
+             PASSO A PASSO (grátis, ~3 min):
+             1) Crie um widget em lightwidget.com OU snapwidget.com
+                conectando o perfil @flora1000flores_contagem.
+             2) Copie o código (iframe) que eles geram.
+             3) Cole DENTRO da div abaixo (no lugar deste comentário).
+             Pronto: a grade de exemplo some sozinha e entra o feed real.
+
+             EXEMPLO (LightWidget) — troque SEU_ID pelo código gerado:
+             <iframe src="//lightwidget.com/widgets/SEU_ID.html" scrolling="no"
+                     allowtransparency="true" class="lightwidget-widget"
+                     style="width:100%;border:0;overflow:hidden;"></iframe>
+             <script src="//lightwidget.com/widgets/lightwidget.js"></script>
+        ========================================================= -->
+        <div class="insta__widget" id="instaWidget"></div>
+      </article>
+
+      <div class="insta__cta reveal">
+        <a class="btn btn--primary" id="instaBtn" href="#" target="_blank" rel="noopener">Ver perfil completo no
+          Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contato">
+    <div class="container footer__inner">
+      <div>
+        <p class="logo logo--footer"><span class="logo__mark">🌻</span> Flora <em>Mil Flores</em></p>
+        <p class="footer__tag">Flores que falam por você</p>
+        <p class="footer__tag">📍 Contagem · MG</p>
+      </div>
+      <div class="footer__col">
+        <h4>Atendimento</h4>
+        <a id="footerWhats" href="#">📱 WhatsApp (31) 99823-9417</a>
+        <a id="footerInsta" href="#" target="_blank" rel="noopener">📷 @flora1000flores_contagem</a>
+        <p>Seg a Sáb, 8h às 18h</p>
+      </div>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Flora Mil Flores. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- ===================== SACOLA (DRAWER) ===================== -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Sua sacola 🛍️</h3>
+      <button class="drawer__close" id="closeCart" aria-label="Fechar">✕</button>
+    </div>
+    <div class="drawer__body" id="cartItems"></div>
+
+    <form class="checkout" id="checkoutForm" hidden>
+      <h4>Dados para entrega</h4>
+      <label>Nome completo
+        <input type="text" name="nome" required placeholder="Quem está enviando" />
+      </label>
+      <label>Para quem é? (destinatário)
+        <input type="text" name="destinatario" placeholder="Nome de quem recebe" />
+      </label>
+      <label>Telefone de contato
+        <input type="tel" name="telefone" required placeholder="(00) 00000-0000" />
+      </label>
+      <label>Endereço de entrega
+        <input type="text" name="endereco" required placeholder="Rua, número, bairro" />
+      </label>
+      <div class="checkout__row">
+        <label>CEP
+          <input type="text" name="cep" placeholder="00000-000" />
+        </label>
+        <label>Data de entrega
+          <input type="date" name="data" required />
+        </label>
+      </div>
+      <label>Mensagem do cartão (opcional)
+        <textarea name="cartao" rows="2" placeholder="Ex.: Feliz aniversário! Com amor..."></textarea>
+      </label>
+      <label>Observações (opcional)
+        <textarea name="obs" rows="2" placeholder="Ponto de referência, horário, etc."></textarea>
+      </label>
+    </form>
+
+    <div class="drawer__foot">
+      <div class="drawer__total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <p class="drawer__note" id="cartNote">A taxa de entrega é combinada pelo WhatsApp.</p>
+      <button class="btn btn--primary btn--block" id="goCheckout" disabled>Finalizar pedido</button>
+      <button class="btn btn--whats btn--block" id="sendWhats" hidden>📱 Enviar pedido no WhatsApp</button>
+      <button class="btn btn--ghost btn--block" id="backToCart" hidden>← Voltar para a sacola</button>
+    </div>
+  </aside>
+
+  <a class="whats-float" id="whatsFloat" href="#" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">📱</a>
+
+  <!-- GSAP + ScrollTrigger + Lenis (smooth scroll) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+
+</html>
