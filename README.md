@@ -18,8 +18,9 @@ python3 -m http.server 5500
 
 | Quero mudar... | Arquivo |
 |---|---|
-| **Número do WhatsApp**, nome da loja, taxa de entrega, Instagram | `js/config.js` |
+| **Número do WhatsApp**, nome da loja, endereço, taxa de entrega, Instagram | `js/config.js` |
 | Produtos (nome, preço, descrição, categoria) | `js/products.js` |
+| Ocasiões, **Depoimentos** e FAQ | `js/app.js` (arrays `OCCASIONS`, `TESTIMONIALS`, `FAQ`) |
 | **Fotos reais** dos produtos e do Instagram | pasta `assets/` → veja `assets/LEIA-ME.md` |
 | Animações (GSAP) e efeitos de scroll | `js/animations.js` |
 | Cores, fontes, layout | `css/styles.css` |
@@ -69,6 +70,16 @@ Coloque suas fotos na pasta `assets/` e aponte no produto:
 ```js
 { id: "buque-primavera", name: "Buquê Primavera", image: "assets/buque-primavera.jpg", ... }
 ```
+
+## Seções do site
+
+Hero → frase de impacto → vitrine imersiva → **como funciona** → coleções →
+catálogo → **ocasiões** → sobre → **depoimentos** → **FAQ** → **contato (com mapa)**
+→ chamada final → prévia do Instagram → rodapé. Mais a **sacola** lateral e o
+**quick-view** (detalhe do produto ao clicar em um card).
+
+> ⚠️ Os **depoimentos** (`TESTIMONIALS` em `js/app.js`) são exemplos —
+> substitua pelos comentários reais dos seus clientes antes de publicar.
 
 ## Estrutura
 

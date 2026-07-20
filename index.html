@@ -38,9 +38,10 @@
         <span class="logo__text">Flora <em>Mil Flores</em></span>
       </a>
       <nav class="nav">
-        <a href="#vitrine" data-scroll>Destaques</a>
         <a href="#catalogo" data-scroll>Catálogo</a>
+        <a href="#ocasioes" data-scroll>Ocasiões</a>
         <a href="#sobre" data-scroll>Sobre</a>
+        <a href="#contato" data-scroll>Contato</a>
       </nav>
       <button class="cart-btn" id="openCart" aria-label="Abrir sacola">
         🛍️ <span class="cart-btn__count" id="cartCount">0</span>
@@ -76,8 +77,8 @@
   <!-- ===================== STATEMENT (reveal por palavra) ===================== -->
   <section class="statement">
     <p class="statement__text" id="statementText">
-      Cada flor carrega uma intenção. Nós cuidamos de cada pétala
-      para que a sua chegue perfeita — e diga exatamente o que você sente.
+      Há 30 anos transformando gestos em lembranças
+      e momentos em histórias inesquecíveis.
     </p>
   </section>
 
@@ -87,6 +88,36 @@
       <div class="showcase__glow" id="showGlow"></div>
       <div class="showcase__stage" id="showStage"><!-- slides via JS --></div>
       <div class="showcase__progress" id="showDots"></div>
+    </div>
+  </section>
+
+  <!-- ===================== COMO FUNCIONA ===================== -->
+  <section class="steps" id="como-funciona">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Como funciona</h2>
+        <p class="section-sub">Do carrinho ao buquê na porta, em 3 passos</p>
+      </div>
+      <div class="steps__grid">
+        <div class="step reveal">
+          <div class="step__num">1</div>
+          <div class="step__icon">🌻</div>
+          <h3>Escolha suas flores</h3>
+          <p>Navegue pelo catálogo e toque em cada produto para ver os detalhes.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">2</div>
+          <div class="step__icon">🛍️</div>
+          <h3>Monte sua sacola</h3>
+          <p>Adicione o que quiser e ajuste as quantidades. Sua sacola fica salva.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">3</div>
+          <div class="step__icon">📱</div>
+          <h3>Finalize no WhatsApp</h3>
+          <p>Preencha os dados de entrega e envie o pedido pronto pra gente.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -113,22 +144,80 @@
     </div>
   </main>
 
+  <!-- ===================== OCASIÕES ===================== -->
+  <section class="occasions" id="ocasioes">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Para cada momento</h2>
+        <p class="section-sub">Diga a ocasião e a gente monta o arranjo perfeito pelo WhatsApp</p>
+      </div>
+      <div class="occasions__grid" id="occasionsGrid"></div>
+    </div>
+  </section>
+
   <!-- ===================== SOBRE (parallax) ===================== -->
   <section class="about" id="sobre">
     <div class="about__art" id="aboutArt">🌻</div>
     <div class="container about__inner">
       <div class="about__text reveal">
-        <h2 class="section-title">Feito à mão, todos os dias</h2>
+        <h2 class="section-title">Há 30 anos espalhando momentos</h2>
         <p>
-          Trabalhamos com flores, folhagens e frutíferas, montando buquês e
-          arranjos para todas as ocasiões. Da surpresa romântica ao presente
-          especial — e também jardinagem para deixar sua casa mais verde.
+          Há três décadas, a Flora 1000 Flores faz parte das histórias mais
+          especiais de seus clientes. Entre flores, plantas e presentes,
+          transformamos gestos simples em lembranças que permanecem para sempre.
+        </p>
+        <p>
+          Mais do que vender flores, entregamos sentimentos, cultivamos sorrisos
+          e fazemos parte de momentos marcantes.
         </p>
         <ul class="about__list">
           <li>🌿 Flores, folhagens e frutíferas selecionadas</li>
-          <li>🧸 Buquês com ursinho, caixa de joias e cestas</li>
+          <li>🧸 Buquês, combos, cestas e complementos</li>
           <li>🚚 Entrega no seu endereço em Contagem e região</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <section class="reviews" id="depoimentos">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Quem recebe, ama 🥰</h2>
+        <p class="section-sub">O carinho dos nossos clientes</p>
+      </div>
+      <div class="reviews__grid" id="reviewsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="faq" id="faq">
+    <div class="container faq__inner">
+      <div class="section-head reveal">
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <p class="section-sub">Tudo o que você precisa saber</p>
+      </div>
+      <div class="faq__list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section class="contact" id="contato">
+    <div class="container contact__inner">
+      <div class="contact__info reveal">
+        <h2 class="section-title">Fale com a gente</h2>
+        <p class="contact__lead">Estamos prontos para deixar o seu dia mais florido.</p>
+        <ul class="contact__list">
+          <li><span>📍</span> <a id="contactMap" href="#" target="_blank" rel="noopener"></a></li>
+          <li><span>📱</span> <a id="contactWhats" href="#" target="_blank" rel="noopener">(31) 99823-9417 · WhatsApp</a></li>
+          <li><span>📷</span> <a id="contactInsta" href="#" target="_blank" rel="noopener">@flora1000flores_contagem</a></li>
+          <li><span>🕐</span> Segunda a Sábado, 8h às 18h</li>
+        </ul>
+        <a class="btn btn--whats" id="contactCta" href="#" target="_blank" rel="noopener">📱 Chamar no WhatsApp</a>
+      </div>
+      <div class="contact__map reveal">
+        <iframe id="mapFrame" title="Mapa da Flora 1000 Flores" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -226,7 +315,7 @@
   </section>
 
   <!-- ===================== FOOTER ===================== -->
-  <footer class="footer" id="contato">
+  <footer class="footer" id="rodape">
     <div class="container footer__inner">
       <div>
         <p class="logo logo--footer"><span class="logo__mark">🌻</span> Flora <em>Mil Flores</em></p>
@@ -250,46 +339,78 @@
       <h3>Sua sacola 🛍️</h3>
       <button class="drawer__close" id="closeCart" aria-label="Fechar">✕</button>
     </div>
-    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__body">
+      <div id="cartItems"></div>
 
-    <form class="checkout" id="checkoutForm" hidden>
-      <h4>Dados para entrega</h4>
-      <label>Nome completo
-        <input type="text" name="nome" required placeholder="Quem está enviando" />
-      </label>
-      <label>Para quem é? (destinatário)
-        <input type="text" name="destinatario" placeholder="Nome de quem recebe" />
-      </label>
-      <label>Telefone de contato
-        <input type="tel" name="telefone" required placeholder="(00) 00000-0000" />
-      </label>
-      <label>Endereço de entrega
-        <input type="text" name="endereco" required placeholder="Rua, número, bairro" />
-      </label>
-      <div class="checkout__row">
-        <label>CEP
-          <input type="text" name="cep" placeholder="00000-000" />
+      <form class="checkout" id="checkoutForm" hidden>
+        <h4>Dados para entrega</h4>
+        <label>Nome completo *
+          <input type="text" name="nome" required placeholder="Quem está enviando" />
         </label>
-        <label>Data de entrega
-          <input type="date" name="data" required />
+        <label>Para quem é? (destinatário)
+          <input type="text" name="destinatario" placeholder="Nome de quem recebe" />
         </label>
-      </div>
-      <label>Mensagem do cartão (opcional)
-        <textarea name="cartao" rows="2" placeholder="Ex.: Feliz aniversário! Com amor..."></textarea>
-      </label>
-      <label>Observações (opcional)
-        <textarea name="obs" rows="2" placeholder="Ponto de referência, horário, etc."></textarea>
-      </label>
-    </form>
+        <label>Telefone de contato *
+          <input type="tel" name="telefone" required placeholder="(00) 00000-0000" />
+        </label>
+        <label>Endereço de entrega *
+          <input type="text" name="endereco" required placeholder="Rua, número, bairro" />
+        </label>
+        <div class="checkout__row">
+          <label>CEP
+            <input type="text" name="cep" placeholder="00000-000" />
+          </label>
+          <label>Data de entrega *
+            <input type="date" name="data" required />
+          </label>
+        </div>
+        <label>Mensagem do cartão (opcional)
+          <textarea name="cartao" rows="2" placeholder="Ex.: Feliz aniversário! Com amor..."></textarea>
+        </label>
+        <label>Observações (opcional)
+          <textarea name="obs" rows="2" placeholder="Ponto de referência, horário, etc."></textarea>
+        </label>
+      </form>
+    </div>
 
     <div class="drawer__foot">
-      <div class="drawer__total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <div class="drawer__total"><span id="cartCountLabel">Total</span><strong id="cartTotal">R$ 0,00</strong></div>
       <p class="drawer__note" id="cartNote">A taxa de entrega é combinada pelo WhatsApp.</p>
-      <button class="btn btn--primary btn--block" id="goCheckout" disabled>Finalizar pedido</button>
-      <button class="btn btn--whats btn--block" id="sendWhats" hidden>📱 Enviar pedido no WhatsApp</button>
-      <button class="btn btn--ghost btn--block" id="backToCart" hidden>← Voltar para a sacola</button>
+      <button class="btn btn--whats btn--block" id="sendWhats" disabled>📱 Finalizar compra pelo WhatsApp</button>
     </div>
   </aside>
+
+  <!-- ===================== QUICK-VIEW DO PRODUTO ===================== -->
+  <div class="qv-overlay" id="qvOverlay"></div>
+  <div class="qv" id="qvModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="qv__close" id="qvClose" aria-label="Fechar">✕</button>
+    <div class="qv__media">
+      <span class="qv__badge" id="qvBadge"></span>
+      <img id="qvImg" src="" alt="" />
+    </div>
+    <div class="qv__body">
+      <span class="qv__cat" id="qvCat"></span>
+      <h3 class="qv__name" id="qvName"></h3>
+      <p class="qv__desc" id="qvDesc"></p>
+      <div class="qv__variants" id="qvVariants" hidden>
+        <span class="qv__variants-label" id="qvVariantsLabel"></span>
+        <div class="qv__chips" id="qvChips"></div>
+      </div>
+      <p class="qv__price" id="qvPrice"></p>
+      <div class="qv__qty">
+        <span>Quantidade</span>
+        <div class="qty">
+          <button id="qvDec" aria-label="Diminuir">−</button>
+          <span id="qvQty">1</span>
+          <button id="qvInc" aria-label="Aumentar">+</button>
+        </div>
+      </div>
+      <div class="qv__actions">
+        <button class="btn btn--primary btn--block" id="qvAdd">Adicionar à sacola</button>
+        <button class="btn btn--whats btn--block" id="qvBuy">📱 Pedir pelo WhatsApp</button>
+      </div>
+    </div>
+  </div>
 
   <a class="whats-float" id="whatsFloat" href="#" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">📱</a>
 

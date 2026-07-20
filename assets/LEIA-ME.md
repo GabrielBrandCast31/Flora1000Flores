@@ -1,48 +1,38 @@
-# 📸 Como adicionar as fotos reais
+# 📸 Fotos dos produtos
 
-Coloque as fotos **dentro desta pasta `assets/`** com os nomes exatos abaixo.
-Pode ser `.jpg` (recomendado). Enquanto a foto não existir, o site mostra
-automaticamente uma imagem de exemplo — nada quebra.
+As fotos abaixo **já foram extraídas do catálogo oficial (PDF)** e estão nesta
+pasta. Para atualizar qualquer uma, basta substituir o arquivo mantendo o mesmo
+nome. Se um arquivo faltar, o site mostra um placeholder automaticamente.
 
-> Dica: use fotos quadradas (ex.: 1000×1000px) para ficarem perfeitas nos cards
-> e na vitrine. Salve direto dos seus posts do Instagram (a conta é de vocês).
+> Dica: use fotos quadradas (ex.: 1000×1000px) para ficarem perfeitas nos cards.
 
-## Fotos dos produtos (catálogo + vitrine)
+| Categoria | Produto | Arquivo |
+|---|---|---|
+| Buquês | Buquê 1000 Flores | `assets/buque-1000-flores.jpg` |
+| Buquês | Buquê de Rosas | `assets/buque-rosas.jpg` |
+| Buquês | Buquê de Girassóis | `assets/buque-girassois.jpg` |
+| Buquês | Buquê de Lírio | `assets/buque-lirio.jpg` |
+| Buquês | Buquê Delicadeza | `assets/buque-delicadeza.jpg` |
+| Buquês | Buquê Flores do Campo | `assets/buque-flores-campo.jpg` |
+| Buquês | Buquê Luxo | `assets/buque-luxo.jpg` |
+| Buquês | Buquê Van Gogh | `assets/buque-van-gogh.jpg` |
+| Combos | Combo Romance Perfeito | `assets/combo-romance.jpg` |
+| Combos | Combo Apaixonante | `assets/combo-apaixonante.jpg` |
+| Arranjos | Arranjo de Rosas | `assets/arranjo-rosas.jpg` |
+| Arranjos | Arranjo de Girassóis | `assets/arranjo-girassois.jpg` |
+| Arranjos | Arranjo de Rosas Azuis | `assets/arranjo-rosas-azuis.jpg` |
+| Cestas | Cesta de Chocolate | `assets/cesta-chocolate.jpg` |
+| Cestas | Cesta Café da Manhã | `assets/cesta-cafe.jpg` |
+| Complementos | Ursinho de Pelúcia | `assets/comp-urso.jpg` |
+| Complementos | Rosa Avulsa | `assets/comp-rosa.jpg` |
+| Complementos | Chocolate no Palito | `assets/comp-chocolate.jpg` |
 
-| Produto | Nome do arquivo |
-|---|---|
-| Buquê Primavera | `assets/buque-primavera.jpg` |
-| Buquê 12 Rosas Vermelhas | `assets/buque-rosas-vermelhas.jpg` |
-| Buquê de Girassóis | `assets/buque-girassois.jpg` |
-| Buquê com Ursinho | `assets/buque-ursinho.jpg` |
-| Arranjo de Mesa Elegance | `assets/arranjo-mesa.jpg` |
-| Orquídea Phalaenopsis | `assets/arranjo-orquidea.jpg` |
-| Trio de Suculentas | `assets/planta-suculentas.jpg` |
-| Jiboia em Cachepô | `assets/planta-jiboia.jpg` |
-| Muda Frutífera | `assets/planta-frutifera.jpg` |
-| Cesta Café da Manhã + Flores | `assets/cesta-cafe.jpg` |
-| Cesta Chocolates & Rosas | `assets/cesta-chocolates.jpg` |
-| Especial Dia das Mães | `assets/data-dia-das-maes.jpg` |
-| Combo Aniversário | `assets/data-aniversario.jpg` |
-| Rosas na Caixa de Joias | `assets/rosas-caixa-joias.jpg` |
-| Coroa de Condolências | `assets/data-condolencias.jpg` |
+## Avatar e Instagram
+
+- **`assets/perfil.png`** → avatar da prévia do Instagram (logo da loja).
+- A prévia do Instagram reaproveita as fotos dos produtos acima.
 
 ## Seção "No nosso Instagram" (prévia do perfil)
 
-Essa prévia (grade 3×3) reaproveita as **mesmas fotos dos produtos** acima —
-não precisa de arquivos extras. Para trocar quais produtos aparecem, edite a
-lista `INSTA_PRODUCTS` em `js/app.js`.
-
-Os números do perfil (publicações/seguidores/seguindo) ficam em
-`js/config.js` → `instagramStats`.
-
-## Quer o feed AO VIVO (atualiza sozinho)?
-
-A grade acima é estática. Para um feed que atualiza sozinho conforme vocês
-postam, use um widget gratuito:
-
-1. Acesse **lightwidget.com** (ou Elfsight), conecte o @flora1000flores_contagem
-   e gere o código de incorporação (embed).
-2. Cole esse código dentro de `<div class="insta__widget" id="instaWidget">`
-   no arquivo `index.html`.
-3. Pronto — o widget assume o lugar da grade automaticamente.
+Números do perfil (publicações/seguidores/seguindo): `js/config.js` →
+`instagramStats`. Quais produtos aparecem: `INSTA_PRODUCTS` em `js/app.js`.
