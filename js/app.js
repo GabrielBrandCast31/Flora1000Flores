@@ -144,6 +144,14 @@ window.Flora = (function () {
   }
 
   /* ---------- Galeria horizontal (coleções) ---------- */
+  // Foto representativa de cada categoria (do catálogo)
+  const CATEGORY_IMG = {
+    "Buquês": "assets/buque-1000-flores.jpg",
+    "Combos": "assets/combo-romance.jpg",
+    "Arranjos": "assets/arranjo-girassois.jpg",
+    "Cestas": "assets/cesta-chocolate.jpg",
+    "Complementos": "assets/comp-urso.jpg",
+  };
   function renderHGallery() {
     const track = $("#hgTrack");
     if (!track) return;
@@ -153,9 +161,14 @@ window.Flora = (function () {
       const emoji = (typeof CATEGORY_EMOJI !== "undefined" && CATEGORY_EMOJI[cat]) || "🌻";
       const card = document.createElement("div");
       card.className = "hcard";
-      card.style.background = `linear-gradient(150deg, ${c1}, ${c2})`;
+      card.style.background = `linear-gradient(150deg, ${c1}, ${c2})`; // fallback
       card.dataset.cat = cat;
-      card.innerHTML = `<span class="hcard__emoji">${emoji}</span><h3 class="hcard__name">${cat}</h3>`;
+      const src = CATEGORY_IMG[cat];
+      const imgHtml = src ? `<img class="hcard__img" src="${src}" alt="${cat}" loading="lazy" />` : `<span class="hcard__emoji">${emoji}</span>`;
+      card.innerHTML = `${imgHtml}<h3 class="hcard__name">${cat}</h3>`;
+      // Se a foto faltar, mostra o emoji sobre o gradiente
+      const im = card.querySelector(".hcard__img");
+      if (im) im.onerror = function () { this.remove(); card.insertAdjacentHTML("afterbegin", `<span class="hcard__emoji">${emoji}</span>`); };
       card.addEventListener("click", () => {
         activeCategory = cat; renderFilters(); renderProducts();
         document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });

@@ -197,8 +197,10 @@ a { color: inherit; text-decoration: none; }
 }
 .hcard:hover { transform: translateY(-8px); }
 .hcard__emoji { position: absolute; top: 8%; right: 6%; font-size: 6rem; opacity: .9; filter: drop-shadow(0 10px 30px rgba(0,0,0,.4)); }
-.hcard__name { font-family: "Cormorant Garamond", serif; font-size: 2rem; position: relative; z-index: 2; }
-.hcard::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.5), transparent 60%); z-index:1; }
+.hcard__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform .6s var(--ease); }
+.hcard:hover .hcard__img { transform: scale(1.06); }
+.hcard__name { font-family: "Cormorant Garamond", serif; font-size: 2rem; position: relative; z-index: 2; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+.hcard::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.1) 55%, rgba(0,0,0,.15)); z-index:1; }
 
 /* ===================== SECTION HEADS ===================== */
 .section-head { text-align: center; margin: 0 0 2.5rem; }
