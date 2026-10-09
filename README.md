@@ -42,7 +42,7 @@ sob demanda, então **vídeos/reels não pesam** no seu site.
 
 Passo a passo (grátis, ~3 min):
 1. Acesse **lightwidget.com** ou **snapwidget.com** e conecte o
-   `@flora1000flores_contagem`.
+   `@flora1000floresltda`.
 2. Gere o widget (escolha layout em grade) e copie o código (um `<iframe>`).
 3. Cole esse código dentro de `<div id="instaWidget">` no `index.html`
    (há um exemplo pronto comentado bem ali).

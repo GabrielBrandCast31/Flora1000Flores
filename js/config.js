@@ -6,19 +6,22 @@
 const CONFIG = {
   // Número que vai receber os pedidos no WhatsApp.
   // Formato: código do país + DDD + número, SÓ números.
-  whatsappNumber: "5531998239417", // (31) 99823-9417 — Contagem/MG
+  whatsappNumber: "553133913872", // (31) 3391-3872 — unidade Firmo de Matos
+  whatsappDisplay: "(31) 3391-3872",
 
   storeName: "Flora Mil Flores",
-  tagline: "Flores, folhagens e frutíferas para todas as ocasiões",
+  tagline: "Floricultura completa: flores, vasos, plantas e jardinagem",
   bio: "Buquê de flores para todas as ocasiões 💐🌻 Entregamos no seu endereço.",
   city: "Contagem · MG",
-  address: "Av. Juscelino Kubitschek, 820 — Industrial, Contagem/MG · 32230-090",
+  unitName: "Flora Mil Flores • Firmo de Matos",
+  address: "Av. Francisco Firmo de Matos, 3720 — Riacho das Pedras, Contagem/MG",
 
   // Redes sociais
-  instagram: "https://www.instagram.com/flora1000flores_contagem/",
-  instagramUser: "flora1000flores_contagem",
-  // Números exibidos na prévia do Instagram (dados reais do perfil)
-  instagramStats: { posts: "2.165", followers: "17,7 mil", following: "4.614" },
+  instagram: "https://www.instagram.com/flora1000floresltda/",
+  instagramUser: "flora1000floresltda",
+  // Números exibidos na prévia do Instagram (preencha com os dados reais do perfil;
+  // vazio = a linha de números fica oculta). Ex.: { posts: "1.234", followers: "10 mil", following: "500" }
+  instagramStats: null,
   // Destaques (stories) — emoji + rótulo; troque por fotos em assets/ se quiser
   instagramHighlights: [
     { label: "Buquê c/ ursinho", emoji: "🧸" },

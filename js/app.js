@@ -195,6 +195,8 @@ window.Flora = (function () {
     setText("#igPosts", s.posts);
     setText("#igFollowers", s.followers);
     setText("#igFollowing", s.following);
+    const statsEl = $(".igcard__stats");
+    if (statsEl && !(s.posts || s.followers || s.following)) statsEl.hidden = true;
     setText("#igAddress", CONFIG.address);
     if (CONFIG.instagramUser) setText("#igUser", CONFIG.instagramUser);
 
@@ -247,6 +249,34 @@ window.Flora = (function () {
       gridEl.appendChild(a);
     });
     attachPhotoFallback(gridEl);
+  }
+
+  /* ---------- Floricultura completa (orçamentos) ---------- */
+  const SERVICES = [
+    { label: "Buquês & arranjos", emoji: "💐" },
+    { label: "Vasos", emoji: "🏺" },
+    { label: "Jardinagem", emoji: "🪴" },
+    { label: "Plantas & folhagens", emoji: "🌿" },
+    { label: "Frutíferas", emoji: "🍋" },
+    { label: "Cestas & presentes", emoji: "🧺" },
+    { label: "Decoração de eventos", emoji: "🎉" },
+    { label: "Coroas & homenagens", emoji: "🕊️" },
+  ];
+  function renderServices() {
+    const el = $("#servicesGrid");
+    if (!el) return;
+    el.innerHTML = "";
+    SERVICES.forEach((o) => {
+      const a = document.createElement("a");
+      a.className = "occasion reveal";
+      a.href = waLink(`Olá! Gostaria de um orçamento de *${o.label}* ${o.emoji}`);
+      a.target = "_blank"; a.rel = "noopener";
+      a.innerHTML = `
+        <span class="occasion__emoji">${o.emoji}</span>
+        <span class="occasion__label">${o.label}</span>
+        <span class="occasion__hint">pedir orçamento →</span>`;
+      el.appendChild(a);
+    });
   }
 
   /* ---------- Ocasiões ---------- */
@@ -309,6 +339,7 @@ window.Flora = (function () {
     { q: "Quais as formas de pagamento?", a: "As formas de pagamento são combinadas pelo WhatsApp na hora de fechar o pedido." },
     { q: "Posso enviar para outra pessoa?", a: "Sim! É só informar o endereço do destinatário e a mensagem do cartão. Cuidamos do resto." },
     { q: "Com quanta antecedência devo pedir?", a: "Sempre que possível, peça com antecedência. Para entregas no mesmo dia, consulte a disponibilidade pelo WhatsApp." },
+    { q: "Vocês fazem orçamento de vasos e jardinagem?", a: "Sim! Somos uma floricultura completa: vasos, plantas, jardinagem, decoração e muito mais. Chame no WhatsApp e peça seu orçamento." },
     { q: "As flores são frescas?", a: "Sim! Selecionamos flores fresquinhas diariamente e montamos cada arranjo na hora." },
   ];
   function renderFaq() {
@@ -335,6 +366,8 @@ window.Flora = (function () {
   function renderContact() {
     const map = $("#contactMap");
     if (map && CONFIG.address) { map.textContent = CONFIG.address; map.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.address); }
+    const bar = $("#addressBar");
+    if (bar && CONFIG.address) bar.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.address);
     const frame = $("#mapFrame");
     if (frame && CONFIG.address) frame.src = "https://www.google.com/maps?q=" + encodeURIComponent(CONFIG.address) + "&output=embed";
   }
@@ -560,6 +593,8 @@ window.Flora = (function () {
     ["#footerInsta", "#instaBtn", "#igUser", "#igFollow", "#igAvatar", "#igMore", "#contactInsta"].forEach((sel) => { const el = $(sel); if (el) el.href = CONFIG.instagram; });
   }
   // Links que vão pro WhatsApp
+  const quoteCta = $("#servicesCta");
+  if (quoteCta) quoteCta.href = waLink("Olá! Vim pelo site e gostaria de um orçamento 🌿");
   ["#igMessage", "#igWhats", "#contactWhats", "#contactCta"].forEach((sel) => { const el = $(sel); if (el) el.href = baseWhats; });
   $("#year").textContent = new Date().getFullYear();
 
@@ -568,6 +603,7 @@ window.Flora = (function () {
   renderProducts();
   renderShowcase();
   renderHGallery();
+  renderServices();
   renderOccasions();
   renderReviews();
   renderFaq();
