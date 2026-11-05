@@ -147,9 +147,11 @@ window.Flora = (function () {
   // Foto representativa de cada categoria (do catálogo)
   const CATEGORY_IMG = {
     "Buquês": "assets/buque-1000-flores.jpg",
+    "Noivas": "assets/noivas-capa.jpg",
     "Combos": "assets/combo-romance.jpg",
     "Arranjos": "assets/arranjo-girassois.jpg",
     "Cestas": "assets/cesta-chocolate.jpg",
+    "Coroas": "assets/coroas-capa.jpg",
     "Complementos": "assets/comp-urso.jpg",
   };
   function renderHGallery() {
@@ -260,6 +262,7 @@ window.Flora = (function () {
     { label: "Frutíferas", emoji: "🍋" },
     { label: "Cestas & presentes", emoji: "🧺" },
     { label: "Decoração de eventos", emoji: "🎉" },
+    { label: "Arranjos de mesa para casamento", emoji: "💍" },
     { label: "Coroas & homenagens", emoji: "🕊️" },
   ];
   function renderServices() {

@@ -8,14 +8,16 @@
 // Paleta (família girassol: dourados, âmbar, verde folha e marrom)
 const CATEGORY_COLORS = {
   "Buquês":       ["#ffd97a", "#f5a623"],
+  "Noivas":       ["#f4e6dc", "#c9a78f"],
   "Combos":       ["#f6b26b", "#e07b1e"],
   "Arranjos":     ["#f3d488", "#c98a2a"],
   "Cestas":       ["#e7cfa3", "#b9874a"],
+  "Coroas":       ["#e3e8de", "#7d8f73"],
   "Complementos": ["#c3e09a", "#5f9b3a"],
 };
 
 const CATEGORY_EMOJI = {
-  "Buquês": "💐", "Combos": "🎁", "Arranjos": "🌷", "Cestas": "🧺", "Complementos": "🧸",
+  "Buquês": "💐", "Noivas": "💍", "Combos": "🎁", "Arranjos": "🌷", "Cestas": "🧺", "Coroas": "🕊️", "Complementos": "🧸",
 };
 
 // Gera uma imagem SVG (data URI) como placeholder (fallback)
@@ -82,6 +84,80 @@ const PRODUCTS = [
     badge: "Novidade",
   },
 
+  // ---------------- NOIVAS (catálogo Mês das Noivas) ----------------
+  // Cada buquê tem versão Igreja e Cartório (ver VARIANTS). As cores das
+  // flores podem ser personalizadas; flores tingidas (ex.: azuis) alteram o valor.
+  {
+    id: "noiva-isabela", name: "Buquê Isabela", category: "Noivas", price: 290,
+    description: "Rosas vermelhas e ruscus. Igreja: 24 rosas · Cartório: 10 rosas.",
+    badge: "Mês das Noivas",
+  },
+  {
+    id: "noiva-ester", name: "Buquê Ester", category: "Noivas", price: 290,
+    description: "Rosas brancas, ruscus, gypsum e lisianthus. Igreja: 15 rosas · Cartório: 06 rosas.",
+    badge: "",
+  },
+  {
+    id: "noiva-brenda", name: "Buquê Brenda", category: "Noivas", price: 290,
+    description: "Girassóis, elcaflor, tango e gypsum. Igreja: 12 girassóis · Cartório: 06 girassóis.",
+    badge: "",
+  },
+  {
+    id: "noiva-helena", name: "Buquê Helena", category: "Noivas", price: 290,
+    description: "Astromélias brancas e gypsum. Leve, delicado e clássico.",
+    badge: "",
+  },
+  {
+    id: "noiva-elisabeth", name: "Buquê Elisabeth", category: "Noivas", price: 390,
+    description: "Rosas brancas, lírios brancos, gypsum e lisianthus. Igreja: 20 rosas e 03 lírios · Cartório: 05 rosas e 01 lírio.",
+    badge: "Premium",
+  },
+  {
+    id: "noiva-aline", name: "Buquê Aline", category: "Noivas", price: 290,
+    description: "06 lírios rosas, astromélia, lisianthus, tango e gypsum. Versão Igreja.",
+    badge: "",
+  },
+  {
+    id: "noiva-elisa", name: "Buquê Elisa", category: "Noivas", price: 120,
+    description: "Todo em gypsum: nuvem branca, romântica e atemporal.",
+    badge: "",
+  },
+  {
+    id: "noiva-alice", name: "Buquê Alice", category: "Noivas", price: 329,
+    description: "Rosas mescladas, lisianthus, astromélia e gypsum. Igreja: 20 rosas · Cartório: 08 rosas.",
+    badge: "",
+  },
+  {
+    id: "noiva-maria", name: "Buquê Maria", category: "Noivas", price: 329,
+    description: "Rosas brancas, gypsum e ruscus. Igreja: 24 rosas · Cartório: 08 rosas.",
+    badge: "",
+  },
+  {
+    id: "noiva-daisy", name: "Buquê Daisy", category: "Noivas", price: 240,
+    description: "Margaridas e gypsum. Alegre, leve e cheio de charme.",
+    badge: "",
+  },
+  {
+    id: "noiva-daminha", name: "Buquê de Daminha", category: "Noivas", price: 50,
+    description: "Buquê de daminha com 5 rosas. A partir de R$50,00 (cores a combinar).",
+    badge: "",
+  },
+  {
+    id: "noiva-tiara", name: "Tiara de Gypsum", category: "Noivas", price: 50,
+    description: "Tiara de gypsum. Infantil a partir de R$50,00 · Adulto a partir de R$110,00. Outras flores sob orçamento.",
+    badge: "",
+  },
+  {
+    id: "noiva-lapela", name: "Lapela", category: "Noivas", price: 9.9,
+    description: "Lapela floral para o noivo e padrinhos. A partir de R$9,90. Outras flores sob orçamento.",
+    badge: "",
+  },
+  {
+    id: "noiva-ramalhete", name: "Ramalhete para Convite", category: "Noivas", price: 9.9,
+    description: "Ramalhete de acabamento para convite. Outras flores sob orçamento.",
+    badge: "",
+  },
+
   // ---------------- COMBOS ----------------
   {
     id: "combo-romance", name: "Combo Romance Perfeito", category: "Combos", price: 539.9,
@@ -122,6 +198,69 @@ const PRODUCTS = [
     description: "Café da manhã completo para surpreender. Simples R$199,90 · Completa R$289,90.",
     badge: "",
   },
+
+  // ---------------- COROAS (catálogo Coroa de Flores) ----------------
+  // 3 linhas de preço: Coroa de Flores 1 (R$390), 2 (R$490) e 3 (R$590).
+  // Fotos: assets/coroa-<linha>-<modelo>.jpg. A faixa leva a mensagem do cliente.
+  // Linha 1 — Tradicional · R$390
+  { id: "coroa-1-01", name: "Coroa Tradicional Branca e Rosa", category: "Coroas", price: 390,
+    description: "Crisântemos brancos com rosas brancas e cor-de-rosa. Faixa com sua mensagem de homenagem.", badge: "Homenagem" },
+  { id: "coroa-1-02", name: "Coroa Tradicional Branca e Vermelha", category: "Coroas", price: 390,
+    description: "Base branca de crisântemos com rosas brancas e toques de vermelho. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-1-03", name: "Coroa Tradicional Toda Branca", category: "Coroas", price: 390,
+    description: "Crisântemos e rosas brancas sobre folhagens verdes. Serena e clássica. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-1-04", name: "Coroa Tradicional Amarela e Vermelha", category: "Coroas", price: 390,
+    description: "Crisântemos amarelos, solidago e rosas vermelhas. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-1-05", name: "Coroa Tradicional Colorida", category: "Coroas", price: 390,
+    description: "Rosas amarelas, cor-de-rosa e vermelhas com crisântemos brancos e lilás. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-1-06", name: "Coroa Tradicional Rosa Claro", category: "Coroas", price: 390,
+    description: "Crisântemos brancos com rosas em tons de rosa claro. Delicada e suave. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-1-07", name: "Coroa Tradicional Vibrante", category: "Coroas", price: 390,
+    description: "Rosas vermelhas, amarelas e pink com solidago. Uma homenagem cheia de vida. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-1-08", name: "Coroa Tradicional Vermelha", category: "Coroas", price: 390,
+    description: "Rosas vermelhas com crisântemos brancos e solidago. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-1-09", name: "Coroa Tradicional Champanhe", category: "Coroas", price: 390,
+    description: "Rosas champanhe e gérberas vermelhas com solidago e gypsum. Faixa com sua mensagem.", badge: "" },
+
+  // Linha 2 — Especial · R$490
+  { id: "coroa-2-01", name: "Coroa Especial Colorida", category: "Coroas", price: 490,
+    description: "Rosas amarelas e pink, crisântemos brancos e solidago. Faixa com sua mensagem de homenagem.", badge: "Especial" },
+  { id: "coroa-2-02", name: "Coroa Especial Pêssego", category: "Coroas", price: 490,
+    description: "Rosas pêssego e champanhe com toques de rosa e gypsum. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-2-03", name: "Coroa Especial Branca e Amarela", category: "Coroas", price: 490,
+    description: "Rosas brancas e amarelas com gypsum e folhagens. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-2-04", name: "Coroa Especial Amarela", category: "Coroas", price: 490,
+    description: "Rosas amarelas com solidago e folhagens verdes. Luz e gratidão. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-2-05", name: "Coroa Especial Rosas Mescladas", category: "Coroas", price: 490,
+    description: "Rosas pink, amarelas e brancas com folhagens. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-2-06", name: "Coroa Especial Vermelha e Rosa", category: "Coroas", price: 490,
+    description: "Rosas vermelhas, rosa e amarelas sobre gypsum. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-2-07", name: "Coroa Especial Girassóis", category: "Coroas", price: 490,
+    description: "Girassóis, rosas laranja e cor-de-rosa com gypsum. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-2-08", name: "Coroa Especial Toda Branca", category: "Coroas", price: 490,
+    description: "Gérberas, rosas brancas e gypsum. Pureza e paz. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-2-09", name: "Coroa Especial Champanhe e Astromélias", category: "Coroas", price: 490,
+    description: "Rosas champanhe e amarelas com astromélias e folhagens. Faixa com sua mensagem.", badge: "" },
+
+  // Linha 3 — Premium · R$590
+  { id: "coroa-3-01", name: "Coroa Premium Pêssego", category: "Coroas", price: 590,
+    description: "Rosas pêssego em abundância com gypsum e folhagens. Faixa com sua mensagem de homenagem.", badge: "Premium" },
+  { id: "coroa-3-02", name: "Coroa Premium Amarela", category: "Coroas", price: 590,
+    description: "Gérberas e rosas amarelas com crisântemos brancos e solidago. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-3-03", name: "Coroa Premium Branca com Crisântemos", category: "Coroas", price: 590,
+    description: "Gérberas, rosas e crisântemos brancos sobre folhagens. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-3-04", name: "Coroa Premium Pêssego e Branca", category: "Coroas", price: 590,
+    description: "Rosas pêssego com crisântemos brancos e gypsum. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-3-05", name: "Coroa Premium Branca com Gérberas", category: "Coroas", price: 590,
+    description: "Gérberas e rosas brancas envoltas em gypsum. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-3-06", name: "Coroa Premium Branca e Amarela", category: "Coroas", price: 590,
+    description: "Gypsum com gérberas amarelas e rosas brancas. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-3-07", name: "Coroa Premium Rosa", category: "Coroas", price: 590,
+    description: "Rosas cor-de-rosa e brancas com gypsum. Carinho e saudade. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-3-08", name: "Coroa Premium Pink e Lilás", category: "Coroas", price: 590,
+    description: "Rosas pink e brancas com flores lilás e folhagens. Faixa com sua mensagem.", badge: "" },
+  { id: "coroa-3-09", name: "Coroa Premium Rosa Claro", category: "Coroas", price: 590,
+    description: "Rosas em tons de rosa claro com gypsum e folhagens. Faixa com sua mensagem.", badge: "" },
 
   // ---------------- COMPLEMENTOS ----------------
   {
@@ -172,6 +311,28 @@ const VARIANTS = {
     { label: "Nacional", price: 9.9 }, { label: "Importada", price: 12.9 } ] },
   "comp-chocolate": { name: "Tipo", options: [
     { label: "Simples", price: 5.0 }, { label: "Ferrero", price: 8.9 } ] },
+
+  // Noivas — Igreja (buquê maior) e Cartório (buquê menor)
+  "noiva-isabela":   { name: "Cerimônia", options: [
+    { label: "Igreja · 24 rosas", price: 290 }, { label: "Cartório · 10 rosas", price: 120 } ] },
+  "noiva-ester":     { name: "Cerimônia", options: [
+    { label: "Igreja · 15 rosas", price: 290 }, { label: "Cartório · 06 rosas", price: 120 } ] },
+  "noiva-brenda":    { name: "Cerimônia", options: [
+    { label: "Igreja · 12 girassóis", price: 290 }, { label: "Cartório · 06 girassóis", price: 100 } ] },
+  "noiva-helena":    { name: "Cerimônia", options: [
+    { label: "Igreja", price: 290 }, { label: "Cartório", price: 100 } ] },
+  "noiva-elisabeth": { name: "Cerimônia", options: [
+    { label: "Igreja · 20 rosas + 3 lírios", price: 390 }, { label: "Cartório · 5 rosas + 1 lírio", price: 160 } ] },
+  "noiva-elisa":     { name: "Cerimônia", options: [
+    { label: "Igreja", price: 120 }, { label: "Cartório", price: 60 } ] },
+  "noiva-alice":     { name: "Cerimônia", options: [
+    { label: "Igreja · 20 rosas", price: 329 }, { label: "Cartório · 08 rosas", price: 140 } ] },
+  "noiva-maria":     { name: "Cerimônia", options: [
+    { label: "Igreja · 24 rosas", price: 329 }, { label: "Cartório · 08 rosas", price: 140 } ] },
+  "noiva-daisy":     { name: "Cerimônia", options: [
+    { label: "Igreja", price: 240 }, { label: "Cartório", price: 120 } ] },
+  "noiva-tiara":     { name: "Tamanho", options: [
+    { label: "Infantil", price: 50 }, { label: "Adulto", price: 110 } ] },
 };
 
 // Foto real (assets/<id>.jpg) + placeholder de fallback + variações
@@ -181,7 +342,7 @@ PRODUCTS.forEach((p) => {
   if (!p.image) p.image = p.photo;
   if (VARIANTS[p.id]) {
     p.variants = VARIANTS[p.id];
-    p.price = p.variants.options[0].price; // preço base = 1ª opção
+    p.price = Math.min(...p.variants.options.map((o) => o.price)); // "a partir de" = menor opção
   }
 });
 
